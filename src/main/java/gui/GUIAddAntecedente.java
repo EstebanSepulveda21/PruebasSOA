@@ -9,6 +9,7 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import logica.Controller;
 import logica.estuctural.Antecedente;
+import logica.estuctural.Ciudadano.TipoDocumento;
 
 /**
  *
@@ -64,7 +65,7 @@ public class GUIAddAntecedente extends javax.swing.JFrame implements Cambiable{
         jLabel5.setText("Tipo de documento");
         jLabel5.setToolTipText("");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(TipoDocumento.values()));
 
         jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(117, 56, 56)));
 
@@ -197,27 +198,28 @@ public class GUIAddAntecedente extends javax.swing.JFrame implements Cambiable{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+   
         String info = jTextField6.getText().trim();
         Date fecha = jDateChooser1.getDate();
         String ciudad = jTextField8.getText().trim();
         String tipoCrimen = jTextField9.getText().trim();
         String cedula = jTextField5.getText().trim();
+        TipoDocumento tipoDocumento = (TipoDocumento)jComboBox1.getSelectedItem();
         
         Antecedente ant = new Antecedente(tipoCrimen, info, fecha, ciudad);
         controller.getUltimoCiudadano().addAntecedente(ant);
-        controller.aniadirAntecedenteCiudadano(ant, cedula);
+        controller.aniadirAntecedenteCiudadano(ant, cedula, tipoDocumento);
         
         JOptionPane.showMessageDialog(this, "Antecedente a�adido correctamente");
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+
        String cedula;
        cedula = jTextField5.getText().trim();
-       
-       controller.darCiudadanoPorCedula(cedula);
+       TipoDocumento tipoDocumento = (TipoDocumento)jComboBox1.getSelectedItem();
+       controller.darCiudadanoPorCedula(cedula, tipoDocumento);
        if(controller.getUltimoCiudadano() != null)
         JOptionPane.showMessageDialog(this, "Se selccion� el ciudadano " + controller.getUltimoCiudadano().getNombre() + " " + controller.getUltimoCiudadano().getApellido());
        else
@@ -262,7 +264,7 @@ public class GUIAddAntecedente extends javax.swing.JFrame implements Cambiable{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<TipoDocumento> jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -281,6 +283,9 @@ public class GUIAddAntecedente extends javax.swing.JFrame implements Cambiable{
     @Override
     public void cambio() {
         if(controller.getUltimoCiudadano()!= null)
-      jTextField5.setText(controller.getUltimoCiudadano().getCedula());
+        {
+            jTextField5.setText(controller.getUltimoCiudadano().getCedula());
+            jComboBox1.setSelectedItem(controller.getUltimoCiudadano().getTipoDocumento());
+        }
     }
 }

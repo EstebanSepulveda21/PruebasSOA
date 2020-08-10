@@ -15,32 +15,38 @@ import java.util.Set;
  */
 public class Ciudadano {
    
+    public enum TipoDocumento{
+        CEDULA_DE_CIUDADANIA, TARJETA_DE_IDENTIDAD, CEDULA_EXTRANJERA
+    }
     
     String nombre;
     String apellido;
     String direccion;
     Date fechaNacimiento;
     String cedula;
+    TipoDocumento tipoDocumento;
     Set<Antecedente> antecedentes;
 
     public Ciudadano() {
     }
 
-    public Ciudadano(String nombre, String apellido, String direccion, Date fechaNacimiento, String cedula) {
+    public Ciudadano(String nombre, String apellido, String direccion, Date fechaNacimiento, String cedula, TipoDocumento tipoDocumento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
         this.fechaNacimiento = fechaNacimiento;
         this.cedula = cedula;
+        this.tipoDocumento = tipoDocumento;
         antecedentes = new HashSet<Antecedente>();
     }
     
-    public Ciudadano(String nombre, String apellido, String direccion, String fechaNacimiento, String cedula) {
+    public Ciudadano(String nombre, String apellido, String direccion, String fechaNacimiento, String cedula, TipoDocumento tipoDocumento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
         setFechaNacimiento(fechaNacimiento);
         this.cedula = cedula;
+        this.tipoDocumento = tipoDocumento;
         antecedentes = new HashSet<Antecedente>();
     }
     
@@ -62,6 +68,10 @@ public class Ciudadano {
 
     public String getCedula() {
         return cedula;
+    }
+
+    public TipoDocumento getTipoDocumento() {
+        return tipoDocumento;
     }
 
     public Set<Antecedente> getAntecedentes() {
@@ -88,6 +98,10 @@ public class Ciudadano {
     }
     public void setCedula(String cedula) {
         this.cedula = cedula;
+    }
+
+    public void setTipoDocumento(TipoDocumento tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
     }
 
     public void setAntecedentes(Set<Antecedente> antecedentes) {
@@ -118,7 +132,7 @@ public class Ciudadano {
         if(objeto==null)
             return false;
         Ciudadano ciudadano = (Ciudadano)objeto;
-        if(this.getCedula().equals(ciudadano.getCedula()))
+        if(this.getCedula().equals(ciudadano.getCedula()) && this.getTipoDocumento()==ciudadano.getTipoDocumento())
             return true;
         else
             return false;

@@ -5,8 +5,10 @@
  */
 package gui;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import logica.Controller;
+import logica.estuctural.Ciudadano.TipoDocumento;
 
 /**
  *
@@ -62,7 +64,7 @@ public class GUIDelete extends javax.swing.JFrame implements Cambiable{
         jLabel6.setText("Numero de identificación ");
         jLabel6.setToolTipText("");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new DefaultComboBoxModel<>(TipoDocumento.values()));
 
         jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(117, 56, 56)));
 
@@ -134,7 +136,8 @@ public class GUIDelete extends javax.swing.JFrame implements Cambiable{
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String cedula = jTextField5.getText();
-        controller.eliminarCiudadano(cedula);
+        TipoDocumento tipoDocumento = (TipoDocumento)jComboBox1.getSelectedItem();
+        controller.eliminarCiudadano(cedula, tipoDocumento);
         JOptionPane.showMessageDialog(this, "Ciudadano eliminado correctamente");
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -175,7 +178,7 @@ public class GUIDelete extends javax.swing.JFrame implements Cambiable{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<TipoDocumento> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -187,6 +190,9 @@ public class GUIDelete extends javax.swing.JFrame implements Cambiable{
     @Override
     public void cambio() {
         if(controller.getUltimoCiudadano()!= null)
-       jTextField5.setText(controller.getUltimoCiudadano().getCedula());
+        {
+            jTextField5.setText(controller.getUltimoCiudadano().getCedula());
+            jComboBox1.setSelectedItem(controller.getUltimoCiudadano().getTipoDocumento());
+        }
     }
 }

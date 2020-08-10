@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 import logica.estuctural.Antecedente;
 import logica.estuctural.Ciudadano;
+import logica.estuctural.Ciudadano.TipoDocumento;
 
 /**
  *
@@ -55,17 +56,17 @@ public class PersistenciaFake {
     
     public static void datosPrueba()
     {
-        Ciudadano ciudadano1 = new Ciudadano("Juan", "Perez", "Yuyaima", Date.valueOf("1998-01-17"), "1234567890");
-        Ciudadano ciudadano2 = new Ciudadano("Brayiam", "Marrulma Jr", "el Bozque", Date.valueOf("2000-01-17"), "1234458792");
+        Ciudadano ciudadano1 = new Ciudadano("Juan", "Perez", "Yuyaima", Date.valueOf("1998-01-17"), "1234567890", Ciudadano.TipoDocumento.CEDULA_DE_CIUDADANIA);
+        Ciudadano ciudadano2 = new Ciudadano("Brayiam", "Marrulma Jr", "el Chamo Bozque", Date.valueOf("2000-01-17"), "1234458792", Ciudadano.TipoDocumento.CEDULA_EXTRANJERA);
         ciudadano2.addAntecedente(new Antecedente("Homicidio", "Fue grabado por 3 camaras del establecimiento", new java.util.Date(), "Imbamgu�"));
         ciudadanos.add(ciudadano1);
         ciudadanos.add(ciudadano2);
     }
     
-    public static Ciudadano getCiudadanoPorCedula(String cedula)
+    public static Ciudadano getCiudadanoPorCedula(String cedula, TipoDocumento tipoDocumento)
     {
         for(Ciudadano people : getCiudadanos()){
-            if(people.getCedula().equals(cedula))
+            if(people.getCedula().equals(cedula)&& tipoDocumento == people.getTipoDocumento() )
                 return people;
         }
         return null;

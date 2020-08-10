@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import logica.Controller;
 import logica.estuctural.Antecedente;
 import logica.estuctural.Ciudadano;
+import logica.estuctural.Ciudadano.TipoDocumento;
 
 /**
  *
@@ -50,7 +51,7 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ANTECEDENTES");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(TipoDocumento.values()));
 
         jLabel5.setText("Tipo de documento");
         jLabel5.setToolTipText("");
@@ -134,11 +135,11 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:  
-        
+     
         String cedula = jTextField5.getText().trim();
-        Ciudadano ciudadano = controller.darCiudadanoPorCedula(cedula);
-        Antecedente antecedente = controller.darPrimerAntecedente(cedula);
+        TipoDocumento tipoDocumento = (TipoDocumento) jComboBox1.getSelectedItem();
+        Ciudadano ciudadano = controller.darCiudadanoPorCedula(cedula, tipoDocumento);
+        Antecedente antecedente = controller.darPrimerAntecedente(cedula, tipoDocumento);
         
         if(ciudadano.getAntecedentes().isEmpty()){
             JOptionPane.showMessageDialog(this, "                                                                Consulta en l�nea de Antecedentes Penales y Requerimientos Judiciales\n" +
@@ -188,6 +189,7 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
                                                                         "\n" +
 "           Si tiene alguna duda con el resultado, consulte las preguntas frecuentes o ac�rquese a las instalaciones de la Polic�a Nacional m�s cercanas.");
         }
+     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -227,7 +229,7 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<TipoDocumento> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
@@ -240,6 +242,9 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
     @Override
     public void cambio() {
         if(controller.getUltimoCiudadano()!= null)
-        jTextField5.setText(controller.getUltimoCiudadano().getCedula());
+        {
+            jTextField5.setText(controller.getUltimoCiudadano().getCedula());
+            jComboBox1.setSelectedItem(controller.getUltimoCiudadano().getTipoDocumento());
+        }
     }
 }

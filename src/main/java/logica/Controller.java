@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.Set;
 import javax.swing.JOptionPane;
 import logica.estuctural.Antecedente;
+import logica.estuctural.Ciudadano.TipoDocumento;
 import persistencia.PersistenciaFake;
 
 /**
@@ -51,25 +52,25 @@ public class Controller {
         cambioEstado();
     }
     
-    public void eliminarCiudadano(String cedula)
+    public void eliminarCiudadano(String cedula, TipoDocumento tipoDocumento)
     {
-        Ciudadano persona = PersistenciaFake.getCiudadanoPorCedula(cedula);
+        Ciudadano persona = PersistenciaFake.getCiudadanoPorCedula(cedula, tipoDocumento);
         ultimoCiudadano = persona;
         PersistenciaFake.deleteCiudadano(persona);
         cambioEstado();
     }
     
-    public void agregarCiudadano(String nombre, String apellido, String direccion, Date fecha, String cedula)
+    public void agregarCiudadano(String nombre, String apellido, String direccion, Date fecha, String cedula, TipoDocumento tipoDocumento)
     {
-        Ciudadano ciudadano = new Ciudadano(nombre, apellido, direccion, fecha, cedula);
+        Ciudadano ciudadano = new Ciudadano(nombre, apellido, direccion, fecha, cedula, tipoDocumento);
         ultimoCiudadano=ciudadano;
         PersistenciaFake.addCiudadano(ciudadano);
         cambioEstado();
     }
     
-    public Ciudadano darCiudadanoPorCedula(String cedula)
+    public Ciudadano darCiudadanoPorCedula(String cedula, TipoDocumento tipoDocumento)
     {
-        Ciudadano resultado = PersistenciaFake.getCiudadanoPorCedula(cedula);
+        Ciudadano resultado = PersistenciaFake.getCiudadanoPorCedula(cedula, tipoDocumento);
         if(resultado != null) {
             ultimoCiudadano = resultado;
             cambioEstado();
@@ -82,12 +83,12 @@ public class Controller {
         return PersistenciaFake.getCiudadanos();
     }
     
-    public void actualizarCiudadano(String nombre, String apellido, String direccion, Date fecha, String cedula)throws Exception
+    public void actualizarCiudadano(String nombre, String apellido, String direccion, Date fecha, String cedula, TipoDocumento tipoDocumento)throws Exception
     {
-        Ciudadano antiguo = darCiudadanoPorCedula(cedula);
+        Ciudadano antiguo = darCiudadanoPorCedula(cedula, tipoDocumento);
         if(antiguo != null)
         {
-            Ciudadano nuevo = new Ciudadano(nombre, apellido, direccion, fecha, cedula);
+            Ciudadano nuevo = new Ciudadano(nombre, apellido, direccion, fecha, cedula, tipoDocumento);
             PersistenciaFake.updateCiudadano(antiguo, nuevo);
             ultimoCiudadano = nuevo;
             cambioEstado();
@@ -98,15 +99,15 @@ public class Controller {
         }
     }
     
-    public void aniadirAntecedenteCiudadano(Antecedente ant, String cedula){
-        Ciudadano ciudadano = darCiudadanoPorCedula(cedula);
+    public void aniadirAntecedenteCiudadano(Antecedente ant, String cedula, TipoDocumento tipoDocumento){
+        Ciudadano ciudadano = darCiudadanoPorCedula(cedula, tipoDocumento);
         ciudadano.addAntecedente(ant);
         cambioEstado();
     }
     
-    public Antecedente darPrimerAntecedente(String cedula){
+    public Antecedente darPrimerAntecedente(String cedula, TipoDocumento tipoDocumento){
         
-        Ciudadano ciudadano = darCiudadanoPorCedula(cedula);
+        Ciudadano ciudadano = darCiudadanoPorCedula(cedula, tipoDocumento);
         if(ciudadano != null){
             if(!ciudadano.getAntecedentes().isEmpty())
             for(Antecedente ant : ciudadano.getAntecedentes()){

@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import logica.Controller;
-import logica.estuctural.Ciudadano;
+import logica.estuctural.Ciudadano.TipoDocumento;
 
 /**
  *
@@ -75,7 +75,7 @@ public class GUIAdd extends javax.swing.JFrame implements Cambiable{
         jLabel5.setText("Tipo de documento");
         jLabel5.setToolTipText("");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(TipoDocumento.values()));
 
         jLabel6.setText("Numero de identificación ");
         jLabel6.setToolTipText("");
@@ -205,11 +205,12 @@ public class GUIAdd extends javax.swing.JFrame implements Cambiable{
                 String direccion = jTextField4.getText().trim();
                 Date fecha = jDateChooser1.getDate();
                 String cedula = jTextField5.getText().trim();
+                TipoDocumento tipoDocumento = (TipoDocumento)jComboBox1.getSelectedItem();
             if(nombre.isEmpty() && apellido.isEmpty() && direccion.isEmpty() && cedula.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Existen valores vac�os, por favor intente de nuevo");
             }
             else{
-                controller.agregarCiudadano(nombre, apellido, direccion, fecha, cedula);
+                controller.agregarCiudadano(nombre, apellido, direccion, fecha, cedula, tipoDocumento);
                 JOptionPane.showMessageDialog(this, "El ciudadano fue agregado correctamente");
 //                jTextField1.setText("");
 //                jTextField3.setText("");
@@ -264,13 +265,14 @@ public class GUIAdd extends javax.swing.JFrame implements Cambiable{
             jTextField3.setText(controller.getUltimoCiudadano().getApellido());
             jTextField4.setText(controller.getUltimoCiudadano().getDireccion());
             jDateChooser1.setDate(controller.getUltimoCiudadano().getFechaNacimiento());
+            jComboBox1.setSelectedItem(controller.getUltimoCiudadano().getTipoDocumento());
             jTextField5.setText(controller.getUltimoCiudadano().getCedula());
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<TipoDocumento> jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

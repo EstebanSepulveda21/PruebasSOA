@@ -10,6 +10,7 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import logica.estuctural.Ciudadano;
 import logica.Controller;
+import logica.estuctural.Ciudadano.TipoDocumento;
 
 /**
  *
@@ -54,14 +55,14 @@ public class GUICiudadano extends javax.swing.JFrame implements Cambiable {
 
             },
             new String [] {
-                "Nombre", "Apellido", "Direccion", "Fecha", "Cedula", "Antecedentes"
+                "Nombre", "Apellido", "Direccion", "Fecha", "T.Doc", "Cedula", "Antecedentes"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -123,8 +124,9 @@ public class GUICiudadano extends javax.swing.JFrame implements Cambiable {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
         int row = jTable1.getSelectedRow();
-        String cedula = (String)jTable1.getValueAt(row, 4);
-        Ciudadano persona = controller.darCiudadanoPorCedula(cedula);
+        TipoDocumento tipoDocumento = (TipoDocumento)jTable1.getValueAt(row, 4);
+        String cedula = (String)jTable1.getValueAt(row, 5);
+        Ciudadano persona = controller.darCiudadanoPorCedula(cedula, tipoDocumento);
     }//GEN-LAST:event_jTable1MouseClicked
 
      
@@ -178,7 +180,7 @@ public class GUICiudadano extends javax.swing.JFrame implements Cambiable {
         if(!controller.darCiudadanos().isEmpty())
         {
             for (Ciudadano people : controller.darCiudadanos()) {
-                model.addRow(new Object[]{people.getNombre(),people.getApellido(), people.getDireccion(), people.getFechaNacimiento(), people.getCedula(), people.tieneAntecedente()});
+                model.addRow(new Object[]{people.getNombre(),people.getApellido(), people.getDireccion(), people.getFechaNacimiento(),people.getTipoDocumento(), people.getCedula(), people.tieneAntecedente()});
             }
         }
     }

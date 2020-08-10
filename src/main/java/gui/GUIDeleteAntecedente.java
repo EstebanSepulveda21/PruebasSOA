@@ -209,11 +209,14 @@ public class GUIDeleteAntecedente extends javax.swing.JFrame implements Cambiabl
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String cedula = jTextField5.getText().trim();
+        
+        /* TODO
         Ciudadano ciudadano = controller.darCiudadanoPorCedula(cedula);
         if(ciudadano != null)
             JOptionPane.showMessageDialog(this, "El ciudadano selecionado es: " + ciudadano.getNombre() + " " + ciudadano.getApellido());
         else
             JOptionPane.showMessageDialog(this, "El ciudadano con la cedula: "+ cedula + " no existe.");
+        */
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

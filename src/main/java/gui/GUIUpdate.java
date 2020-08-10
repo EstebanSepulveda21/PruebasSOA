@@ -227,7 +227,7 @@ public class GUIUpdate extends javax.swing.JFrame implements Cambiable{
        String cedula;
        cedula = jTextField5.getText().trim();
        
-       controller.darCiudadanoPorCedula(cedula);
+   //    controller.darCiudadanoPorCedula(cedula);
        
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -243,7 +243,7 @@ public class GUIUpdate extends javax.swing.JFrame implements Cambiable{
                     JOptionPane.showMessageDialog(this, "Existen valores vac�os, por favor intente de nuevo");
                 }
                 else{
-                    controller.actualizarCiudadano(nombre, apellido, direccion, fecha, cedula);
+                   // controller.actualizarCiudadano(nombre, apellido, direccion, fecha, cedula);
                     JOptionPane.showMessageDialog(this, "El ciudadano fue actualizado correctamente");
                 }
         } catch (Exception e) {
