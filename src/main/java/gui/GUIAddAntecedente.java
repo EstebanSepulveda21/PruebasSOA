@@ -52,6 +52,8 @@ public class GUIAddAntecedente extends javax.swing.JFrame implements Cambiable{
         jTextField9 = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
+        setResizable(false);
+
         jLabel1.setFont(new java.awt.Font("Lucida Fax", 2, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ANTECEDENTES");
@@ -166,9 +168,7 @@ public class GUIAddAntecedente extends javax.swing.JFrame implements Cambiable{
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel9))
+                    .addComponent(jLabel9)
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -280,6 +280,7 @@ public class GUIAddAntecedente extends javax.swing.JFrame implements Cambiable{
     //TODO implementar
     @Override
     public void cambio() {
+        if(controller.getUltimoCiudadano()!= null)
       jTextField5.setText(controller.getUltimoCiudadano().getCedula());
     }
 }

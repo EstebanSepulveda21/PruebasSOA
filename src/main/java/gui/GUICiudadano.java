@@ -38,21 +38,11 @@ public class GUICiudadano extends javax.swing.JFrame implements Cambiable {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jTextApellido = new javax.swing.JTextField();
-        jTextNombre = new javax.swing.JTextField();
-        jTextDir = new javax.swing.JTextField();
-        jTextCedula = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextFecha = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
-        jButton1.setText("DatosPrueba");
+        setResizable(false);
+
+        jButton1.setText("Generar Datos Prueba");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -89,42 +79,8 @@ public class GUICiudadano extends javax.swing.JFrame implements Cambiable {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jButton2.setText("Eliminar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("A�adir");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jTextNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNombreActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Nombre:");
-
-        jLabel2.setText("Direcci�n:");
-
-        jLabel3.setText("Apellido:");
-
-        jLabel4.setText("Fecha Nacimiento:");
-
-        jLabel5.setText("C�dula:");
-
-        jButton4.setText("Actualizar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel6.setText("CUIDADANOS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,83 +89,26 @@ public class GUICiudadano extends javax.swing.JFrame implements Cambiable {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(jButton1)
-                        .addGap(152, 152, 152)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextApellido)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextDir, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton4))))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(212, 212, 212)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton3)
-                        .addComponent(jButton4))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5)))
+                .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jTextApellido.getAccessibleContext().setAccessibleName("txtApellido");
-        jTextNombre.getAccessibleContext().setAccessibleName("txtNombre");
-        jTextDir.getAccessibleContext().setAccessibleName("txtDir");
-        jTextCedula.getAccessibleContext().setAccessibleName("txtCed");
-        jLabel1.getAccessibleContext().setAccessibleName("s");
-        jTextFecha.getAccessibleContext().setAccessibleName("txtFecha");
 
         pack();
         setLocationRelativeTo(null);
@@ -218,95 +117,15 @@ public class GUICiudadano extends javax.swing.JFrame implements Cambiable {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here
          controller.datosPrueba();
-         cambio();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * boton a�adir
-     * @param evt 
-     */
     
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        try {
-                String nombre = jTextNombre.getText().trim();
-                String apellido = jTextApellido.getText().trim();
-                String direccion = jTextDir.getText().trim();
-                Date fecha = java.sql.Date.valueOf(jTextFecha.getText().trim());
-                String cedula = jTextCedula.getText().trim();
-            if(nombre.isEmpty() && apellido.isEmpty() && direccion.isEmpty() && cedula.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Existen valores vac�os, por favor intente de nuevo");
-            }
-            else{
-                nombre = jTextNombre.getText();
-                apellido = jTextApellido.getText();
-                direccion = jTextDir.getText();
-                fecha = java.sql.Date.valueOf(jTextFecha.getText());
-                cedula = jTextCedula.getText();
-                controller.agregarCiudadano(nombre, apellido, direccion, fecha, cedula);
-                cambio();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "La fecha debe tener el formato: yyyy-mm-dd");
-        }
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    
-    private void jTextNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextNombreActionPerformed
-
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
         int row = jTable1.getSelectedRow();
         String cedula = (String)jTable1.getValueAt(row, 4);
         Ciudadano persona = controller.darCiudadanoPorCedula(cedula);
-        jTextNombre.setText(persona.getNombre());
-        jTextApellido.setText(persona.getApellido());
-        jTextDir.setText(persona.getDireccion());
-        jTextFecha.setText(persona.getFechaNacimiento().toString());
-        jTextCedula.setText(persona.getCedula());
-
     }//GEN-LAST:event_jTable1MouseClicked
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        try {
-                String nombre = jTextNombre.getText().trim();
-                String apellido = jTextApellido.getText().trim();
-                String direccion = jTextDir.getText().trim();
-                Date fecha = java.sql.Date.valueOf(jTextFecha.getText().trim());
-                String cedula = jTextCedula.getText().trim();
-            if(nombre.isEmpty() && apellido.isEmpty() && direccion.isEmpty() && cedula.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Existen valores vac�os, por favor intente de nuevo");
-            }
-            else{
-                nombre = jTextNombre.getText();
-                apellido = jTextApellido.getText();
-                direccion = jTextDir.getText();
-                fecha = java.sql.Date.valueOf(jTextFecha.getText());
-                cedula = jTextCedula.getText();
-                controller.actualizarCiudadano(nombre, apellido, direccion, fecha, cedula);
-                cambio();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "La fecha debe tener el formato: yyyy-mm-dd");
-        }
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    /**
-     * boton eliminar
-     * @param evt 
-     */
-    
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        String cedula = jTextCedula.getText();
-        controller.eliminarCiudadano(cedula);
-        cambio();
-
-    }//GEN-LAST:event_jButton2ActionPerformed
 
      
     /**
@@ -347,29 +166,21 @@ public class GUICiudadano extends javax.swing.JFrame implements Cambiable {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextApellido;
-    private javax.swing.JTextField jTextCedula;
-    private javax.swing.JTextField jTextDir;
-    private javax.swing.JTextField jTextFecha;
-    private javax.swing.JTextField jTextNombre;
+    // End of variables declaration//GEN-END:variables
 
     @Override
     public void cambio() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.getDataVector().removeAllElements();
-        for (Ciudadano people : controller.darCiudadanos()) {
-            model.addRow(new Object[]{people.getNombre(),people.getApellido(), people.getDireccion(), people.getFechaNacimiento(), people.getCedula(), people.tieneAntecedente()});
+        if(!controller.darCiudadanos().isEmpty())
+        {
+            for (Ciudadano people : controller.darCiudadanos()) {
+                model.addRow(new Object[]{people.getNombre(),people.getApellido(), people.getDireccion(), people.getFechaNacimiento(), people.getCedula(), people.tieneAntecedente()});
+            }
         }
     }
-    // End of variables declaration//GEN-END:variables
+    
 }

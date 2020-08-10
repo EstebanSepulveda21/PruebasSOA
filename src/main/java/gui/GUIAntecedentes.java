@@ -44,6 +44,8 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setResizable(false);
+
         jLabel1.setFont(new java.awt.Font("Lucida Fax", 2, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ANTECEDENTES");
@@ -53,7 +55,7 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
         jLabel5.setText("Tipo de documento");
         jLabel5.setToolTipText("");
 
-        jLabel6.setText("Numero de identificación ");
+        jLabel6.setText("Numero de identificaciÃ³n ");
         jLabel6.setToolTipText("");
 
         jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(117, 56, 56)));
@@ -139,52 +141,52 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
         Antecedente antecedente = controller.darPrimerAntecedente(cedula);
         
         if(ciudadano.getAntecedentes().isEmpty()){
-            JOptionPane.showMessageDialog(this, "                                                                Consulta en línea de Antecedentes Penales y Requerimientos Judiciales\n" +
+            JOptionPane.showMessageDialog(this, "                                                                Consulta en lï¿½nea de Antecedentes Penales y Requerimientos Judiciales\n" +
                                             "\n" +
                                             "\n" +
-                                                    "                                                                                            La Policía Nacional de Colombia informa:\n" +
+                                                    "                                                                                            La Policï¿½a Nacional de Colombia informa:\n" +
                     "\n" +
                                 "                                                          Que siendo las 22:34:33 horas del 08/08/2020, el ciudadano identificado con:\n" +
-                                                        "                                                                                               Cédula de Ciudadanía Nº " + jTextField5.getText() + "\n" +
+                                                        "                                                                                               Cï¿½dula de Ciudadanï¿½a Nï¿½ " + jTextField5.getText() + "\n" +
                                                 "                                                                              Apellidos y Nombres: " + controller.getUltimoCiudadano().getApellido() + " " + controller.getUltimoCiudadano().getNombre() + "\n" +
                                                                         "\n" +
                     "\n" +
                                         "           NO TIENE ASUNTOS PENDIENTES CON LAS AUTORIDADES JUDICIALES\n" +
-                            "           de conformidad con lo establecido en el artículo 248 de la Constitución Política de Colombia.\n" +
+                            "           de conformidad con lo establecido en el artï¿½culo 248 de la Constituciï¿½n Polï¿½tica de Colombia.\n" +
                                                                          "\n" +
 "           En cumplimiento de la Sentencia SU-458 del 21 de junio de 2012, proferida por la Honorable Corte Constitucional, la leyenda"+ "\n" +
-                    "           NO TIENE ASUNTOS PENDIENTES CON LAS AUTORIDADES JUDICIALES” aplica para todas aquellas personas que no registran antecedentes" + "\n" + 
-                    "           y para quienes la autoridad judicial competente haya decretado la extinción de la condena o la prescripción de la pena.\n"+
+                    "           NO TIENE ASUNTOS PENDIENTES CON LAS AUTORIDADES JUDICIALESï¿½ aplica para todas aquellas personas que no registran antecedentes" + "\n" + 
+                    "           y para quienes la autoridad judicial competente haya decretado la extinciï¿½n de la condena o la prescripciï¿½n de la pena.\n"+
                                                                         "\n" +
-"           Esta consulta es válida siempre y cuando el número de identificación y nombres, correspondan con el documento de identidad registrado" + "\n" +
+"           Esta consulta es vï¿½lida siempre y cuando el nï¿½mero de identificaciï¿½n y nombres, correspondan con el documento de identidad registrado" + "\n" +
                     "           y solo aplica para el territorio colombiano de acuerdo a lo establecido en el ordenamiento constitucional.\n" +
                                                                         "\n" +
-"           Si tiene alguna duda con el resultado, consulte las preguntas frecuentes o acérquese a las instalaciones de la Policía Nacional más cercanas.");
+"           Si tiene alguna duda con el resultado, consulte las preguntas frecuentes o acï¿½rquese a las instalaciones de la Policï¿½a Nacional mï¿½s cercanas.");
         }
         else{
-            JOptionPane.showMessageDialog(this, "                                                                Consulta en línea de Antecedentes Penales y Requerimientos Judiciales\n" +
+            JOptionPane.showMessageDialog(this, "                                                                Consulta en lï¿½nea de Antecedentes Penales y Requerimientos Judiciales\n" +
                                             "\n" +
                                             "\n" +
-                                                    "                                                                                            La Policía Nacional de Colombia informa:\n" +
+                                                    "                                                                                            La Policï¿½a Nacional de Colombia informa:\n" +
                     "\n" +
                                 "                                                          Que siendo las 22:34:33 horas del 08/08/2020, el ciudadano identificado con:\n" +
-                                                        "                                                                                               Cédula de Ciudadanía Nº " + jTextField5.getText() + "\n" +
+                                                        "                                                                                               Cï¿½dula de Ciudadanï¿½a Nï¿½ " + jTextField5.getText() + "\n" +
                                                 "                                                                              Apellidos y Nombres: " + controller.getUltimoCiudadano().getApellido() + " " + controller.getUltimoCiudadano().getNombre() + "\n" +
                                                                         "\n" +
                     "\n" +
                                         "           PRESENTA LOS SIGUIENTES PENDIENTES CON LAS AUTORIDADES JUDICIALES\n" +
-                            "           de conformidad con lo establecido en el artículo 248 de la Constitución Política de Colombia.\n" +
+                            "           de conformidad con lo establecido en el artï¿½culo 248 de la Constituciï¿½n Polï¿½tica de Colombia.\n" +
                                                                          "\n" +
 "           En cumplimiento de la Sentencia SU-458 del 21 de junio de 2012, proferida por la Honorable Corte Constitucional, la leyenda"+ "\n" +
-                    "          SE ENCUENTRA QUE APLICA EL SIGUIENTE ANTECEDENTE JUDICIAl” DADO POR UN TIPO DE CRIMEN DE " + antecedente.getTipoDeCrimen() + "\n" +
+                    "          SE ENCUENTRA QUE APLICA EL SIGUIENTE ANTECEDENTE JUDICIAlï¿½ DADO POR UN TIPO DE CRIMEN DE " + antecedente.getTipoDeCrimen() + "\n" +
                     "           EJECUTADO DE MANERA " + antecedente.getDetalles() + "\n" + 
                     "           Aplica para todos aquellos que presenten antecedentes\n" +
-                    "           y para quienes la autoridad judicial competente haya decretado la extinción de la condena o la prescripción de la pena.\n"+
+                    "           y para quienes la autoridad judicial competente haya decretado la extinciï¿½n de la condena o la prescripciï¿½n de la pena.\n"+
                                                                         "\n" +
-"           Esta consulta es válida siempre y cuando el número de identificación y nombres, correspondan con el documento de identidad registrado" + "\n" +
+"           Esta consulta es vï¿½lida siempre y cuando el nï¿½mero de identificaciï¿½n y nombres, correspondan con el documento de identidad registrado" + "\n" +
                     "           y solo aplica para el territorio colombiano de acuerdo a lo establecido en el ordenamiento constitucional.\n" +
                                                                         "\n" +
-"           Si tiene alguna duda con el resultado, consulte las preguntas frecuentes o acérquese a las instalaciones de la Policía Nacional más cercanas.");
+"           Si tiene alguna duda con el resultado, consulte las preguntas frecuentes o acï¿½rquese a las instalaciones de la Policï¿½a Nacional mï¿½s cercanas.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -237,7 +239,7 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
     //TODO implementar
     @Override
     public void cambio() {
-        //To change body of generated methods, choose Tools | Templates.
+        if(controller.getUltimoCiudadano()!= null)
         jTextField5.setText(controller.getUltimoCiudadano().getCedula());
     }
 }

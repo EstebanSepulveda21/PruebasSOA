@@ -15,6 +15,7 @@ import java.util.Set;
  */
 public class Ciudadano {
    
+    
     String nombre;
     String apellido;
     String direccion;
@@ -101,6 +102,10 @@ public class Ciudadano {
         } catch (Exception e) {
             return false;
         }
+    }
+    public void deleteAllAntecedentes()
+    {
+        antecedentes = new HashSet<Antecedente>();
     }
     
     public boolean tieneAntecedente()

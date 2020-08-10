@@ -46,7 +46,9 @@ public class Controller {
 
     public void datosPrueba()
     {
+        setUltimoCiudadano(null);
         PersistenciaFake.datosPrueba();
+        cambioEstado();
     }
     
     public void eliminarCiudadano(String cedula)
