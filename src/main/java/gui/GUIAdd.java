@@ -207,16 +207,11 @@ public class GUIAdd extends javax.swing.JFrame implements Cambiable{
                 String cedula = jTextField5.getText().trim();
                 TipoDocumento tipoDocumento = (TipoDocumento)jComboBox1.getSelectedItem();
             if(nombre.isEmpty() && apellido.isEmpty() && direccion.isEmpty() && cedula.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Existen valores vac�os, por favor intente de nuevo");
+                JOptionPane.showMessageDialog(this, "Existen valores vacíos, por favor intente de nuevo");
             }
             else{
                 controller.agregarCiudadano(nombre, apellido, direccion, fecha, cedula, tipoDocumento);
                 JOptionPane.showMessageDialog(this, "El ciudadano fue agregado correctamente");
-//                jTextField1.setText("");
-//                jTextField3.setText("");
-//                jTextField4.setText("");
-//                jTextField2.setText("");
-//                jTextField5.setText("");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "La fecha debe tener el formato: yyyy-mm-dd");

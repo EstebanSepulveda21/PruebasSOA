@@ -8,6 +8,7 @@ package gui;
 import java.util.HashSet;
 import javax.swing.JOptionPane;
 import logica.Controller;
+import logica.estuctural.Ciudadano.TipoDocumento;
 import logica.estuctural.Ciudadano;
 
 /**

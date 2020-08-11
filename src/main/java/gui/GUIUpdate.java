@@ -8,6 +8,7 @@ package gui;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import logica.Controller;
+import logica.estuctural.Ciudadano.TipoDocumento;
 import logica.estuctural.Ciudadano;
 
 /**
@@ -75,7 +76,7 @@ public class GUIUpdate extends javax.swing.JFrame implements Cambiable{
 
         jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(117, 56, 56)));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(TipoDocumento.values()));
 
         jLabel1.setText("Nombre");
 
@@ -239,11 +240,12 @@ public class GUIUpdate extends javax.swing.JFrame implements Cambiable{
             String direccion = jTextField4.getText().trim();
             Date fecha = jDateChooser1.getDate();
             String cedula = jTextField5.getText().trim();
+            TipoDocumento tipoDocumento = (TipoDocumento)jComboBox1.getSelectedItem();
                 if(nombre.isEmpty() && apellido.isEmpty() && direccion.isEmpty() && cedula.isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "Existen valores vac�os, por favor intente de nuevo");
+                    JOptionPane.showMessageDialog(this, "Existen valores vacíos, por favor intente de nuevo");
                 }
                 else{
-                   // controller.actualizarCiudadano(nombre, apellido, direccion, fecha, cedula);
+                    controller.actualizarCiudadano(nombre, apellido, direccion, fecha, cedula,tipoDocumento);
                     JOptionPane.showMessageDialog(this, "El ciudadano fue actualizado correctamente");
                 }
         } catch (Exception e) {
@@ -290,7 +292,7 @@ public class GUIUpdate extends javax.swing.JFrame implements Cambiable{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<TipoDocumento> jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
