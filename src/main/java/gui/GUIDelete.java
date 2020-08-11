@@ -44,12 +44,20 @@ public class GUIDelete extends javax.swing.JFrame implements Cambiable{
         jTextField5 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
+        setTitle("Eliminar Ciudadano");
+        setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Lucida Fax", 2, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(3, 59, 118));
         jLabel7.setText("Ciudadanos ");
 
+        jButton1.setBackground(new java.awt.Color(229, 229, 229));
         jButton1.setFont(new java.awt.Font("Lucida Fax", 2, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(3, 59, 118));
         jButton1.setText("Eliminar");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -65,9 +73,11 @@ public class GUIDelete extends javax.swing.JFrame implements Cambiable{
         jLabel6.setToolTipText("");
 
         jComboBox1.setModel(new DefaultComboBoxModel<>(TipoDocumento.values()));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(229, 229, 229)));
 
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(117, 56, 56)));
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(229, 229, 229)));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon("imagenes\\eliminar160.png"));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -87,10 +97,9 @@ public class GUIDelete extends javax.swing.JFrame implements Cambiable{
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField5)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel7)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel7)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12))
         );
         jPanel1Layout.setVerticalGroup(
@@ -124,9 +133,7 @@ public class GUIDelete extends javax.swing.JFrame implements Cambiable{
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

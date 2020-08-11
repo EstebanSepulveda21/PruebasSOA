@@ -57,6 +57,7 @@ public class GUIMenu extends javax.swing.JFrame {
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menú principal");
         setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -206,6 +207,7 @@ public class GUIMenu extends javax.swing.JFrame {
         jMenu3.add(jMenuItem6);
 
         jMenuItem7.setText("Eliminar antecedente");
+        jMenuItem7.setEnabled(false);
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem7ActionPerformed(evt);

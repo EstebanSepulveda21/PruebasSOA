@@ -5,6 +5,8 @@
  */
 package gui;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import logica.Controller;
 import logica.estuctural.Antecedente;
@@ -45,13 +47,20 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setTitle("Ver Antecedentes");
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Lucida Fax", 2, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(3, 59, 118));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ANTECEDENTES");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(TipoDocumento.values()));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(220, 220, 220)));
 
         jLabel5.setText("Tipo de documento");
         jLabel5.setToolTipText("");
@@ -59,43 +68,49 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
         jLabel6.setText("Numero de identificación ");
         jLabel6.setToolTipText("");
 
-        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(117, 56, 56)));
+        jTextField5.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(220, 220, 220)));
 
+        jButton1.setBackground(new java.awt.Color(229, 229, 229));
         jButton1.setFont(new java.awt.Font("Lucida Fax", 2, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(3, 59, 118));
         jButton1.setText("Mostrar");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon("imagenes\\antecedentes.png"));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(170, 170, 170)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(172, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addGap(46, 46, 46)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(82, 82, 82))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))
+                                .addGap(46, 46, 46)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(82, 82, 82))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(195, 195, 195))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,43 +155,44 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
         TipoDocumento tipoDocumento = (TipoDocumento) jComboBox1.getSelectedItem();
         Ciudadano ciudadano = controller.darCiudadanoPorCedula(cedula, tipoDocumento);
         Antecedente antecedente = controller.darPrimerAntecedente(cedula, tipoDocumento);
-        
+        LocalDateTime actual = LocalDateTime.now();
+        String fechaHora = actual.getHour()+ " horas del dia " + actual.getDayOfMonth() + " de " + actual.getMonth() + " del " + actual.getYear();
         if(ciudadano.getAntecedentes().isEmpty()){
-            JOptionPane.showMessageDialog(this, "                                                                Consulta en l�nea de Antecedentes Penales y Requerimientos Judiciales\n" +
+            JOptionPane.showMessageDialog(this, "                                                                Consulta en línea de Antecedentes Penales y Requerimientos Judiciales\n" +
                                             "\n" +
                                             "\n" +
-                                                    "                                                                                            La Polic�a Nacional de Colombia informa:\n" +
+                                                    "                                                                                            La Policía Nacional de Colombia informa:\n" +
                     "\n" +
-                                "                                                          Que siendo las 22:34:33 horas del 08/08/2020, el ciudadano identificado con:\n" +
-                                                        "                                                                                               C�dula de Ciudadan�a N� " + jTextField5.getText() + "\n" +
+                                "                                                          Que siendo las " + fechaHora + " , el ciudadano identificado con:\n" +
+                                                        "                                                                                               Cédula de Ciudadanía N° " + jTextField5.getText() + "\n" +
                                                 "                                                                              Apellidos y Nombres: " + controller.getUltimoCiudadano().getApellido() + " " + controller.getUltimoCiudadano().getNombre() + "\n" +
                                                                         "\n" +
                     "\n" +
                                         "           NO TIENE ASUNTOS PENDIENTES CON LAS AUTORIDADES JUDICIALES\n" +
-                            "           de conformidad con lo establecido en el art�culo 248 de la Constituci�n Pol�tica de Colombia.\n" +
+                            "           de conformidad con lo establecido en el art�culo 248 de la Constitución Política de Colombia.\n" +
                                                                          "\n" +
 "           En cumplimiento de la Sentencia SU-458 del 21 de junio de 2012, proferida por la Honorable Corte Constitucional, la leyenda"+ "\n" +
                     "           NO TIENE ASUNTOS PENDIENTES CON LAS AUTORIDADES JUDICIALES� aplica para todas aquellas personas que no registran antecedentes" + "\n" + 
-                    "           y para quienes la autoridad judicial competente haya decretado la extinci�n de la condena o la prescripci�n de la pena.\n"+
+                    "           y para quienes la autoridad judicial competente haya decretado la extinción de la condena o la prescripción de la pena.\n"+
                                                                         "\n" +
-"           Esta consulta es v�lida siempre y cuando el n�mero de identificaci�n y nombres, correspondan con el documento de identidad registrado" + "\n" +
+"           Esta consulta es válida siempre y cuando el número de identificación y nombres, correspondan con el documento de identidad registrado" + "\n" +
                     "           y solo aplica para el territorio colombiano de acuerdo a lo establecido en el ordenamiento constitucional.\n" +
                                                                         "\n" +
-"           Si tiene alguna duda con el resultado, consulte las preguntas frecuentes o ac�rquese a las instalaciones de la Polic�a Nacional m�s cercanas.");
+"           Si tiene alguna duda con el resultado, consulte las preguntas frecuentes o acérquese a las instalaciones de la Policía Nacional más cercanas.");
         }
         else{
-            JOptionPane.showMessageDialog(this, "                                                                Consulta en l�nea de Antecedentes Penales y Requerimientos Judiciales\n" +
+            JOptionPane.showMessageDialog(this, "                                                                Consulta en línea de Antecedentes Penales y Requerimientos Judiciales\n" +
                                             "\n" +
                                             "\n" +
-                                                    "                                                                                            La Polic�a Nacional de Colombia informa:\n" +
+                                                    "                                                                                            La Policía Nacional de Colombia informa:\n" +
                     "\n" +
-                                "                                                          Que siendo las 22:34:33 horas del 08/08/2020, el ciudadano identificado con:\n" +
-                                                        "                                                                                               C�dula de Ciudadan�a N� " + jTextField5.getText() + "\n" +
+                                "                                                          Que siendo las " + fechaHora + " , el ciudadano identificado con:\n" +
+                                                        "                                                                                               Cédula de Ciudadanía N° " + jTextField5.getText() + "\n" +
                                                 "                                                                              Apellidos y Nombres: " + controller.getUltimoCiudadano().getApellido() + " " + controller.getUltimoCiudadano().getNombre() + "\n" +
                                                                         "\n" +
                     "\n" +
                                         "           PRESENTA LOS SIGUIENTES PENDIENTES CON LAS AUTORIDADES JUDICIALES\n" +
-                            "           de conformidad con lo establecido en el art�culo 248 de la Constituci�n Pol�tica de Colombia.\n" +
+                            "           de conformidad con lo establecido en el artículo 248 de la Constitución Política de Colombia.\n" +
                                                                          "\n" +
 "           En cumplimiento de la Sentencia SU-458 del 21 de junio de 2012, proferida por la Honorable Corte Constitucional, la leyenda"+ "\n" +
                     "          SE ENCUENTRA QUE APLICA EL SIGUIENTE ANTECEDENTE JUDICIAl� DADO POR UN TIPO DE CRIMEN DE " + antecedente.getTipoDeCrimen() + "\n" +
@@ -184,10 +200,10 @@ public class GUIAntecedentes extends javax.swing.JFrame implements Cambiable{
                     "           Aplica para todos aquellos que presenten antecedentes\n" +
                     "           y para quienes la autoridad judicial competente haya decretado la extinci�n de la condena o la prescripci�n de la pena.\n"+
                                                                         "\n" +
-"           Esta consulta es v�lida siempre y cuando el n�mero de identificaci�n y nombres, correspondan con el documento de identidad registrado" + "\n" +
+"           Esta consulta es válida siempre y cuando el número de identificación y nombres, correspondan con el documento de identidad registrado" + "\n" +
                     "           y solo aplica para el territorio colombiano de acuerdo a lo establecido en el ordenamiento constitucional.\n" +
                                                                         "\n" +
-"           Si tiene alguna duda con el resultado, consulte las preguntas frecuentes o ac�rquese a las instalaciones de la Polic�a Nacional m�s cercanas.");
+"           Si tiene alguna duda con el resultado, consulte las preguntas frecuentes o acérquese a las instalaciones de la Policía Nacional más cercanas.");
         }
      
     }//GEN-LAST:event_jButton1ActionPerformed
